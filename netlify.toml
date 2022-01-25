@@ -18,5 +18,5 @@ publish = ".next"
 # All deploys generated from a pull/merge request
 # will inherit these settings.
 [context.deploy-preview.environment]
-  environment = { SOME_KEY = "t0te5Important5tuff" }
+  environment = { SOME_KEY = "t0te5Important5tuff-added" }
   ACCESS_TOKEN = "not so secret"

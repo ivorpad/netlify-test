@@ -1,3 +1,10 @@
+
+[build]
+command = "npm run build"
+functions = "out_functions"
+publish = ".next"
+
+
 # Production context:
 # All deploys from the main repository branch
 # will inherit these settings.

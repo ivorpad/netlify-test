@@ -24,4 +24,6 @@ functions = "functions"
 #   ACCESS_TOKEN = "not so secret"
 
 [[plugins]]
-  package = 'netlify-plugin-contextual-env'
+package = 'netlify-plugin-contextual-env'
+  [plugins.inputs]
+  mode = 'prefix'

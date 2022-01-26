@@ -17,7 +17,7 @@ publish = ".next"
 # All deploys generated from a pull/merge request
 # will inherit these settings.
 [context.deploy-preview]
-  command = "echo 'PREVIEW_ACCESS_TOKEN='IVOR_PADILLA'' >> .env && npm run build"
+  command = "echo 'ACCESS_TOKEN='IVOR_PADILLA1'' >> .env.production.local && 'ACCESS_TOKEN='IVOR_PADILLA2'' >> .env.local && npm run build"
   environment = { ACCESS_TOKEN = "super secret" }
 
 # [context.deploy-preview.environment]

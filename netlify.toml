@@ -18,7 +18,7 @@ functions = "functions"
 # All deploys generated from a pull/merge request
 # will inherit these settings.
 [context.deploy-preview]
-  command = "echo 'PREVIEW_ACCESS_TOKEN='IVOR_PADILLA'' >> .env.local && npm run build"
+  command = "echo 'ACCESS_TOKEN='IVOR_PADILLA'' >> .env.local && npm run build"
   functions = "functions"
   environment = { ACCESS_TOKEN = "super secret" }
 

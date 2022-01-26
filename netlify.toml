@@ -1,22 +1,31 @@
 
 [build]
-command = "npm run build"
-functions = "out_functions"
+command = "node context.js && npm run build"
 publish = ".next"
+functions = "functions"
 
 # Production context:
 # All deploys from the main repository branch
 # will inherit these settings.
 [context.production]
   [context.production.environment]
-    ACCESS_TOKEN = "super secret"
-    
+    ACCESS_TOKEN = "super secret1"
+    CONTEXT = "hello2"
   # Deploys from main branch run this plugin in the build.
   # Plugins context requires double brackets.
 
 # Deploy Preview context:
 # All deploys generated from a pull/merge request
 # will inherit these settings.
+[context.deploy-preview]
+  command = "node context.js && npm run build"
+
 [context.deploy-preview.environment]
-  environment = { SOME_KEY = "t0te5Important5tuff" }
   ACCESS_TOKEN = "not so secret"
+  CONTEXT = "hello"
+  
+[[plugins]]
+package = "netlify-plugin-inline-functions-env-typescript"
+  [plugins.inputs]
+  verbose = "true"
+  inlineAll = "true"

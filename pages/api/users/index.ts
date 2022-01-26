@@ -1,8 +1,23 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { sampleUserData } from '../../../utils/sample-data'
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
+import context from '../../../public/context.json'
 
 dotenv.config();
+
+type Context = {
+  context?: string
+}
+
+const currentContext = (context as Context)?.context;
+
+
+const contextualEnvVar = (v) => {
+  const formattedContext = currentContext.replace("-", "_").toUpperCase();
+  return process.env[`${formattedContext}_${v}`];
+};
+
+console.log(contextualEnvVar('ACCESS_TOKEN'));
 
 const handler = (_req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -10,7 +25,10 @@ const handler = (_req: NextApiRequest, res: NextApiResponse) => {
       throw new Error('Cannot find user data')
     }
 
-    res.status(200).json({ ...sampleUserData, data: process.env });
+    res.status(200).json({
+      ...sampleUserData,
+      access_token: contextualEnvVar("ACCESS_TOKEN"),
+    });
   } catch (err: any) {
     res.status(500).json({ statusCode: 500, message: err.message })
   }

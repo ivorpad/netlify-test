@@ -9,6 +9,16 @@ type Context = {
   context?: string
 }
 
+const currentContext = (context as Context)?.context;
+
+
+const contextualEnvVar = (v) => {
+  const formattedContext = currentContext.replace("-", "_").toUpperCase();
+  return process.env[`${formattedContext}_${v}`];
+};
+
+console.log(contextualEnvVar('ACCESS_TOKEN'));
+
 const handler = (_req: NextApiRequest, res: NextApiResponse) => {
   try {
     if (!Array.isArray(sampleUserData)) {
@@ -17,7 +27,7 @@ const handler = (_req: NextApiRequest, res: NextApiResponse) => {
 
     res.status(200).json({
       ...sampleUserData,
-      context: (context as Context)?.context,
+      access_token: contextualEnvVar("ACCESS_TOKEN"),
     });
   } catch (err: any) {
     res.status(500).json({ statusCode: 500, message: err.message })

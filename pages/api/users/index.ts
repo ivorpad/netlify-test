@@ -3,10 +3,11 @@ import { sampleUserData } from '../../../utils/sample-data'
 import dotenv from 'dotenv';
 import context from '../../../public/context.json'
 
-console.log("context :>> ", context);
-
 dotenv.config();
 
+type Context = {
+  context?: string
+}
 
 const handler = (_req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -16,7 +17,7 @@ const handler = (_req: NextApiRequest, res: NextApiResponse) => {
 
     res.status(200).json({
       ...sampleUserData,
-      context: context?.context,
+      context: (context as Context)?.context,
     });
   } catch (err: any) {
     res.status(500).json({ statusCode: 500, message: err.message })

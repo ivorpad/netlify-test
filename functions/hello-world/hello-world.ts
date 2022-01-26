@@ -7,8 +7,7 @@ const handler: Handler = async (event, context) => {
     statusCode: 200,
     body: JSON.stringify({
       message: "Hello World",
-      context: process.env.CONTEXT,
-      a: process.env,
+      context: typeof process.env.CONTEXT === "undefined" ? "undefined" : process.env.CONTEXT,
     }),
   };
 };

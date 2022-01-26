@@ -1,6 +1,6 @@
 
 [build]
-command = "echo 'ACCESS_TOKEN='IVOR_PADILLA'' >> .env.production.local && npm run build"
+command = "npm run build"
 publish = ".next"
 functions = "functions"
 
@@ -18,12 +18,12 @@ functions = "functions"
 # All deploys generated from a pull/merge request
 # will inherit these settings.
 [context.deploy-preview]
-  command = "echo 'ACCESS_TOKEN='IVOR_PADILLA'' >> .env.production.local && npm run build"
+  command = "echo 'PREVIEW_ACCESS_TOKEN='IVOR_PADILLA'' >> .env.local && npm run build"
   functions = "functions"
   environment = { ACCESS_TOKEN = "super secret" }
 
 # [context.deploy-preview.environment]
 #   ACCESS_TOKEN = "not so secret"
 
-# [[plugins]]
-#   package = "netlify-plugin-inline-functions-env"
+[[plugins]]
+  package = "netlify-plugin-inline-functions-env"

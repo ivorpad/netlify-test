@@ -21,7 +21,7 @@ const handler = (_req: NextApiRequest, res: NextApiResponse) => {
       .json({
         ...sampleUserData,
         data: process.env,
-        var: contextualEnvVar("ACCESS_TOKEN"),
+        asas: contextualEnvVar("ACCESS_TOKEN"),
       });
   } catch (err: any) {
     res.status(500).json({ statusCode: 500, message: err.message })

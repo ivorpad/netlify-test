@@ -4,7 +4,6 @@ command = "npm run build"
 publish = ".next"
 functions = "functions"
 
-
 # Production context:
 # All deploys from the main repository branch
 # will inherit these settings.
@@ -18,12 +17,12 @@ functions = "functions"
 # All deploys generated from a pull/merge request
 # will inherit these settings.
 [context.deploy-preview]
-  command = "echo 'ACCESS_TOKEN='IVOR_PADILLA'' >> .env.production.local && npm run build"
+  command = "npm run build"
 
 # [context.deploy-preview.environment]
 #   ACCESS_TOKEN = "not so secret"
 
 [[plugins]]
-package = 'netlify-plugin-contextual-env'
+package = "netlify-plugin-inline-functions-env"
   [plugins.inputs]
-  mode = 'prefix'
+  buildEvent = "onBuild"

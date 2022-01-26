@@ -7,7 +7,7 @@ const handler: Handler = async (event, context) => {
     statusCode: 200,
     body: JSON.stringify({
       message: "Hello World",
-      access_token: process.env.ACCESS_TOKEN,
+      context: process.env.CONTEXT,
     }),
   };
 };

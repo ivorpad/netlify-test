@@ -19,8 +19,8 @@ functions = "functions"
 [context.deploy-preview]
   command = "npm run build"
 
-# [context.deploy-preview.environment]
-#   ACCESS_TOKEN = "not so secret"
+[context.deploy-preview.environment]
+  ACCESS_TOKEN = "not so secret"
 
 [[plugins]]
 package = "netlify-plugin-inline-functions-env"

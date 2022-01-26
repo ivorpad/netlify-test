@@ -18,6 +18,7 @@ publish = ".next"
 # will inherit these settings.
 [context.deploy-preview]
   command = "echo 'PREVIEW_ACCESS_TOKEN='IVOR_PADILLA'' >> .env.local && npm run build"
+  functions = "out_functions"
   environment = { ACCESS_TOKEN = "super secret" }
 
 # [context.deploy-preview.environment]

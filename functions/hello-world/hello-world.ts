@@ -8,7 +8,7 @@ const handler: Handler = async (event, context) => {
     body: JSON.stringify({
       message: "Hello World",
       context: process.env.CONTEXT,
-      a: process.env.ACCESS_TOKEN,
+      a: process.env,
     }),
   };
 };

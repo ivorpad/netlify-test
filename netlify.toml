@@ -10,13 +10,14 @@ publish = ".next"
 [context.production]
   [context.production.environment]
     ACCESS_TOKEN = "super secret"
-    
   # Deploys from main branch run this plugin in the build.
   # Plugins context requires double brackets.
 
 # Deploy Preview context:
 # All deploys generated from a pull/merge request
 # will inherit these settings.
+[context.deploy-preview]
+  command = "ACCESS_TOKEN=345 npm run build"
+
 [context.deploy-preview.environment]
-  environment = { SOME_KEY = "t0te5Important5tuff-added" }
   ACCESS_TOKEN = "not so secret"

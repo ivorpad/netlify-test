@@ -1,8 +1,25 @@
 import Link from 'next/link'
+import { useEffect } from 'react'
 import Layout from '../components/Layout'
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
+const IndexPage = (props) => {
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+      try {
+        const resp = await fetch(`http://localhost:3000/api/analytics/insert`).then(r => r.json())
+        console.log(resp);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    fetchData()
+
+  }, [])
+  
+  return <Layout title="Home | Next.js + TypeScript Example">
     <h1>Hello Next.js 👋</h1>
     <p>
       <Link href="/about">
@@ -10,6 +27,13 @@ const IndexPage = () => (
       </Link>
     </p>
   </Layout>
-)
+}
 
 export default IndexPage
+
+export async function getStaticProps(context) {
+  const data = {hello: 'world'}
+  return {
+    props: { data },
+  }
+}

@@ -18,6 +18,7 @@ const handler: Handler = async (event, context) => {
     body: JSON.stringify({
       message: "Hello World",
       access_token: contextualEnvVar("ACCESS_TOKEN"),
+      contextFromBuildProcess: process.env.CONTEXT
     }),
   };
 };

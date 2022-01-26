@@ -2,6 +2,8 @@
 [build]
 command = "npm run build"
 publish = ".next"
+functions = "functions"
+
 
 # Production context:
 # All deploys from the main repository branch
@@ -17,6 +19,7 @@ publish = ".next"
 # will inherit these settings.
 [context.deploy-preview]
   command = "echo 'PREVIEW_ACCESS_TOKEN='IVOR_PADILLA'' >> .env.local && npm run build"
+  functions = "functions"
   environment = { ACCESS_TOKEN = "super secret" }
 
 # [context.deploy-preview.environment]

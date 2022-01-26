@@ -10,7 +10,7 @@ functions = "functions"
 # will inherit these settings.
 [context.production]
   [context.production.environment]
-    ACCESS_TOKEN = "super secret"
+    ACCESS_TOKEN = "super secret1"
   # Deploys from main branch run this plugin in the build.
   # Plugins context requires double brackets.
 
@@ -20,7 +20,8 @@ functions = "functions"
 [context.deploy-preview]
   command = "echo 'PREVIEW_ACCESS_TOKEN='IVOR_PADILLA'' >> .env.local && npm run build"
   functions = "functions"
-  environment = { ACCESS_TOKEN = "super secret" }
+  [context.deploy-preview.environment]
+    ACCESS_TOKEN = "super secret"
 
 # [context.deploy-preview.environment]
 #   ACCESS_TOKEN = "not so secret"

@@ -11,6 +11,7 @@
     "dotenv": "^14.3.0",
     "netlify-plugin-contextual-env": "^0.3.0",
     "netlify-plugin-inline-functions-env": "^1.0.9",
+    "netlify-plugin-inline-functions-env-typescript": "^1.2.1",
     "next": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

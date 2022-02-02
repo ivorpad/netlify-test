@@ -23,7 +23,7 @@ const IndexPage = (props) => {
     <h1>Hello Next.js 👋</h1>
     <p>
       <Link href="/about">
-        <a>About</a>
+        <a>About Us</a>
       </Link>
     </p>
   </Layout>

@@ -18,7 +18,7 @@ functions = "functions"
 # All deploys generated from a pull/merge request
 # will inherit these settings.
 [context.deploy-preview]
-  command = "sed -i \"s|SELF_URL_PLACEHOLDER|${DEPLOY_URL}|g\" netlify.toml && npm run build"
+  command = "sed -i \"s|SELF_URL_PLACEHOLDER|${PROD_API_LOCATION}|g\" netlify.toml && npm run build"
 
 [context.deploy-preview.environment]
   ACCESS_TOKEN = "not so secret"

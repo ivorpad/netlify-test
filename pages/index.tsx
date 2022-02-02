@@ -6,7 +6,7 @@ const IndexPage = (props) => {
 
   console.log(
     "Environment From Page", 
-    process.env.ACCESS_TOKEN, 
+    process.env.LAMBDA_URL, 
     process.env.NEXT_PUBLIC_ACCESS_TOKEN, 
     process.env.NEXT_PUBLIC_SELF_URL, 
     process.env.NEXT_PUBLIC_CONTEXT, 

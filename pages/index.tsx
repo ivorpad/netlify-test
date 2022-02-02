@@ -4,6 +4,8 @@ import Layout from '../components/Layout'
 
 const IndexPage = (props) => {
 
+  console.log(process.env.CONTEXT);
+
   useEffect(() => {
 
     const fetchData = async () => {

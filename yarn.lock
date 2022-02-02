@@ -295,7 +295,7 @@
     ufo "^0.7.9"
     unstorage "^0.2.8"
 
-"@netlify/plugin-nextjs@^4.2.1":
+"@netlify/plugin-nextjs@4.2.1":
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-4.2.1.tgz#a741bf2cee1bc62996cfb6ab31a9c69886fcf9b1"
   integrity sha512-cJ/LjX/hF+uJhCuXwJUiv9L/NaYLBuqtSAJ+IhSShrY92KqupLkhzy7LZdvprzCxhtkEyhDGNJEJP1vwHdSGQA==

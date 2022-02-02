@@ -9,8 +9,7 @@ functions = "functions"
 # will inherit these settings.
 [context.production]
   [context.production.environment]
-    ACCESS_TOKEN = "super secret1"
-    CONTEXT = "hello2"
+    CONTEXT = "production"
   # Deploys from main branch run this plugin in the build.
   # Plugins context requires double brackets.
 
@@ -22,10 +21,10 @@ functions = "functions"
 
 [context.deploy-preview.environment]
   ACCESS_TOKEN = "not so secret"
-  CONTEXT = "hello"
+  CONTEXT = "deploy-preview"
   
 [[plugins]]
-package = "netlify-plugin-inline-functions-env-typescript"
+package = "netlify-plugin-inline-functions-env"
   [plugins.inputs]
-  verbose = "true"
-  inlineAll = "true"
+  include = ["CONTEXT", "ACCESS_TOKEN"]
+  buildEvent = "onBuild"

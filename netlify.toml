@@ -16,10 +16,10 @@ functions = "functions"
 
 
 [context.deploy-preview]
-  command = "sed -i \"s|SELF_URL_PLACEHOLDER|${PROD_API_LOCATION}|g\" netlify.toml && npm run build"
+  command = "npm run build"
 
 [context.deploy-preview.environment]
-  ACCESS_TOKEN = "not so secret"
+  LAMBDA_URL = "THS IS LAMBDA URL"
   NEXT_PUBLIC_ACCESS_TOKEN = "not so secret next public"
   NEXT_PUBLIC_SELF_URL = "SELF_URL_PLACEHOLDER"
   NEXT_PUBLIC_CONTEXT = "deploy-preview"

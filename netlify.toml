@@ -17,10 +17,11 @@ functions = "functions"
 # All deploys generated from a pull/merge request
 # will inherit these settings.
 [context.deploy-preview]
-  command = "SELF_URL=$DEPLOY_URL node context.js && npm run build"
+  command = "SELF_URL=$DEPLOY_URL node && npm run build"
 
 [context.deploy-preview.environment]
   ACCESS_TOKEN = "not so secret"
+  NEXT_PUBLIC_ACCESS_TOKEN = "not so secret"
   NEXT_PUBLIC_CONTEXT = "deploy-preview"
   
 [[plugins]]

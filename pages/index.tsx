@@ -4,7 +4,16 @@ import Layout from '../components/Layout'
 
 const IndexPage = (props) => {
 
-  console.log("Environment", process.env.ACCESS_TOKEN, process.env.NEXT_PUBLIC_ACCESS_TOKEN, process.env.NEXT_PUBLIC_SELF_URL, process.env.NEXT_PUBLIC_CONTEXT, process.env.HELLO_THERE, process.env.PROD_API_LOCATION);
+  console.log(
+    "Environment From Page", 
+    process.env.ACCESS_TOKEN, 
+    process.env.NEXT_PUBLIC_ACCESS_TOKEN, 
+    process.env.NEXT_PUBLIC_SELF_URL, 
+    process.env.NEXT_PUBLIC_CONTEXT, 
+    process.env.HELLO_THERE, 
+    process.env.PROD_API_LOCATION,
+    process.env.NEXT_PUBLIC_PROD_API_LOCATION
+  );
    
   return <Layout title="Home | Next.js + TypeScript Example">
     <h1>Hello Next.js 👋</h1>

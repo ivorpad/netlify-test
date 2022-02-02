@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 
 const IndexPage = (props) => {
 
-  console.log("Environment", process.env);
+  console.log("Environment", process.env.ACCESS_TOKEN, process.env.NEXT_PUBLIC_ACCESS_TOKEN, process.env.NEXT_PUBLIC_SELF_URL);
   
   return <Layout title="Home | Next.js + TypeScript Example">
     <h1>Hello Next.js 👋</h1>
@@ -18,7 +18,7 @@ const IndexPage = (props) => {
 
 export default IndexPage
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const data = {hello: 'world'}
   return {
     props: { data },

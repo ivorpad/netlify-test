@@ -10,6 +10,7 @@ functions = "functions"
 [context.production]
   [context.production.environment]
     NEXT_PUBLIC_CONTEXT = "production"
+    NEXT_PUBLIC_ACCESS_TOKEN = "not so secret for prod"
   # Deploys from main branch run this plugin in the build.
   # Plugins context requires double brackets.
 
@@ -23,9 +24,3 @@ functions = "functions"
   ACCESS_TOKEN = "not so secret"
   NEXT_PUBLIC_ACCESS_TOKEN = "not so secret"
   NEXT_PUBLIC_CONTEXT = "deploy-preview"
-  
-[[plugins]]
-package = "netlify-plugin-inline-functions-env-typescript"
-  [plugins.inputs]
-  verbose = "true"
-  inlineAll = "true"

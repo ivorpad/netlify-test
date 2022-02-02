@@ -9,7 +9,7 @@ functions = "functions"
 # will inherit these settings.
 [context.production]
   [context.production.environment]
-    CONTEXT = "production"
+    NEXT_PUBLIC_CONTEXT = "production"
   # Deploys from main branch run this plugin in the build.
   # Plugins context requires double brackets.
 
@@ -21,7 +21,7 @@ functions = "functions"
 
 [context.deploy-preview.environment]
   ACCESS_TOKEN = "not so secret"
-  CONTEXT = "deploy-preview"
+  NEXT_PUBLIC_CONTEXT = "deploy-preview"
   
 [[plugins]]
 package = "netlify-plugin-inline-functions-env"

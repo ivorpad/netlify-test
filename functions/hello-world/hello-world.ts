@@ -1,14 +1,14 @@
 import { Handler } from "@netlify/functions";
-import context from "../../public/context.json"
+// import context from "../../public/context.json"
 
-type Context = {
-  context?: string;
-};
+// type Context = {
+//   context?: string;
+// };
 
-const currentContext = (context as Context)?.context;
+// const currentContext = (context as Context)?.context;
 
 const contextualEnvVar = (v) => {
-  const formattedContext = currentContext.replace("-", "_").toUpperCase();
+  const formattedContext = process.env.CONTEXT.replace("-", "_").toUpperCase();
   return process.env[`${formattedContext}_${v}`];
 };
 

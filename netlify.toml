@@ -22,6 +22,11 @@ functions = "functions"
 
 [context.deploy-preview.environment]
   ACCESS_TOKEN = "not so secret"
-  NEXT_PUBLIC_ACCESS_TOKEN = "not so secret"
+  NEXT_PUBLIC_ACCESS_TOKEN = "not so secret next public"
   NEXT_PUBLIC_SELF_URL = "SELF_URL_PLACEHOLDER"
   NEXT_PUBLIC_CONTEXT = "deploy-preview"
+
+ [[plugins]]
+package = "netlify-plugin-inline-functions-env"
+  [plugins.inputs]
+  include = ["PROD_API_LOCATION", "ACCESS_TOKEN"] 

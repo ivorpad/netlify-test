@@ -10,7 +10,7 @@ const IndexPage = (props) => {
     <h1>Hello Next.js 👋</h1>
     <p>
       <Link href="/about">
-        <a>About Us</a>
+        <a>About</a>
       </Link>
     </p>
   </Layout>

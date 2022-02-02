@@ -27,6 +27,15 @@ const handler = (_req: NextApiRequest, res: NextApiResponse) => {
 
     res.status(200).json({
       envs: process.env,
+      another: [
+        process.env.ACCESS_TOKEN,
+        process.env.NEXT_PUBLIC_ACCESS_TOKEN,
+        process.env.NEXT_PUBLIC_SELF_URL,
+        process.env.NEXT_PUBLIC_CONTEXT,
+        process.env.HELLO_THERE,
+        process.env.PROD_API_LOCATION,
+        process.env.NEXT_PUBLIC_PROD_API_LOCATION,
+      ],
     });
   } catch (err: any) {
     res.status(500).json({ statusCode: 500, message: err.message })

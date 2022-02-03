@@ -4,16 +4,7 @@ import Layout from '../components/Layout'
 
 const IndexPage = (props) => {
 
-  console.log(
-    "Environment From Page", 
-    process.env.LAMBDA_URL, 
-    process.env.NEXT_PUBLIC_ACCESS_TOKEN, 
-    process.env.NEXT_PUBLIC_SELF_URL, 
-    process.env.NEXT_PUBLIC_CONTEXT, 
-    process.env.HELLO_THERE, 
-    process.env.PROD_API_LOCATION,
-    process.env.NEXT_PUBLIC_PROD_API_LOCATION
-  );
+  console.log(process.env.LAMBDA_URL, process.env.FROM_PRODUCTION);
    
   return <Layout title="Home | Next.js + TypeScript Example">
     <h1>Hello Next.js 👋</h1>
@@ -28,6 +19,7 @@ const IndexPage = (props) => {
 export default IndexPage
 
 export async function getServerSideProps(context) {
+  console.log(process.env.LAMBDA_URL, process.env.FROM_PRODUCTION);
   const data = {hello: 'world'}
   return {
     props: { data },

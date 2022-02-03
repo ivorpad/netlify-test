@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 
 const IndexPage = (props) => {
 
-  console.log(process.env.LAMBDA_URL, process.env.FROM_PRODUCTION);
+  console.log(process.env.LAMBDA_URL, process.env.GLOBAL_ALL_ENVS, process.env.URL);
    
   return <Layout title="Home | Next.js + TypeScript Example">
     <h1>Hello Next.js 👋</h1>

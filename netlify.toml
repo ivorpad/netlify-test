@@ -1,8 +1,11 @@
 
 [build]
-command = "node context.js && npm run build"
-publish = ".next"
-functions = "functions"
+  command = "sed -i \"s|HEADER_PLACEHOLDER|${DEPLOY_URL}|g\" netlify.toml && npm run build"
+  publish = ".next"
+  functions = "functions"
+
+[build.environment]
+  GLOBAL_ALL_ENVS = "true"
 
 # Production context:
 # All deploys from the main repository branch
@@ -11,7 +14,7 @@ functions = "functions"
   [context.production.environment]
     NEXT_PUBLIC_CONTEXT = "production"
     NEXT_PUBLIC_ACCESS_TOKEN = "not so secret for prod"
-    FROM_PRODUCTION = "true"
+    URL = "HEADER_PLACEHOLDER"
   # Deploys from main branch run this plugin in the build.
   # Plugins context requires double brackets.
 

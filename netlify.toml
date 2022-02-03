@@ -1,6 +1,6 @@
 
 [build]
-  command = "sed -i \"s|DEPLOY_URL|${DEPLOY_PRIME_URL}|g\" netlify.toml && npm run build"
+  command = "sed -i \"s|DEPLOY_URL|${CONTEXT}|g\" netlify.toml && npm run build"
   publish = ".next"
   functions = "functions"
 

@@ -19,7 +19,6 @@ const IndexPage = (props) => {
 export default IndexPage
 
 export async function getServerSideProps(context) {
-  console.log(process.env.LAMBDA_URL, process.env.FROM_PRODUCTION);
   const data = {hello: 'world'}
   return {
     props: { data },

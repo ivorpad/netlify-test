@@ -14,7 +14,7 @@
   [context.production.environment]
     NEXT_PUBLIC_CONTEXT = "production"
     NEXT_PUBLIC_ACCESS_TOKEN = "not so secret for prod"
-    URL = "DEPLOY_URL"
+    MY_URL = "DEPLOY_URL"
   # Deploys from main branch run this plugin in the build.
   # Plugins context requires double brackets.
 
@@ -24,7 +24,4 @@
 
 [context.deploy-preview.environment]
   LAMBDA_URL = "THS IS LAMBDA URL"
-  NEXT_PUBLIC_ACCESS_TOKEN = "not so secret next public"
-  NEXT_PUBLIC_SELF_URL = "SELF_URL_PLACEHOLDER"
-  NEXT_PUBLIC_CONTEXT = "deploy-preview"
-  URL = "DEPLOY_URL"
+  MY_URL = "DEPLOY_URL"

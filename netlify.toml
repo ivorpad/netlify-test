@@ -1,6 +1,6 @@
 
 [build]
-  command = "sed -i \"s|HEADER_PLACEHOLDER|${DEPLOY_URL}|g\" netlify.toml && npm run build"
+  command = "sed -i \"s|DEPLOY_URL|${DEPLOY_PRIME_URL}|g\" netlify.toml && npm run build"
   publish = ".next"
   functions = "functions"
 
@@ -14,7 +14,7 @@
   [context.production.environment]
     NEXT_PUBLIC_CONTEXT = "production"
     NEXT_PUBLIC_ACCESS_TOKEN = "not so secret for prod"
-    URL = "HEADER_PLACEHOLDER"
+    URL = "DEPLOY_URL"
   # Deploys from main branch run this plugin in the build.
   # Plugins context requires double brackets.
 
